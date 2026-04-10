@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人信息卡片</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span class="brand__title">个人信息卡片</span>
+        </div>
+        <div class="topbar__actions">
+          <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="切换主题">
+            <span id="themeToggleLabel">深色</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="card" id="profileCard" aria-label="个人信息卡片">
+        <div class="card__bg" aria-hidden="true"></div>
+        <div class="card__content">
+          <div class="avatarRow">
+            <div class="avatarWrap" id="avatarWrap" title="点击更换头像">
+              <img id="avatarImg" class="avatarImg" alt="头像预览" src="1.jpg"  />
+              <div id="avatarInitials" class="avatarInitials" aria-hidden="true"></div>
+              <div class="avatarOverlay" aria-hidden="true">
+                <div class="avatarOverlay__inner">更换头像</div>
+              </div>
+            </div>
+
+            <input
+              id="avatarInput"
+              class="srOnly"
+              type="file"
+              accept="image/*"
+              aria-label="选择头像图片"
+            />
+
+            <div class="meta">
+              <div class="meta__title">
+                <span class="label">姓名</span>
+                <span id="nameDisplay" class="value value--name">美叽</span>
+              </div>
+              <div class="meta__bio">
+                <span class="label">个人简介</span>
+                <p id="bioDisplay" class="value value--bio">
+                  世界上最可爱的小老鼠!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider" role="separator" aria-hidden="true"></div>
+
+          <form class="form" id="profileForm">
+            <div class="field">
+              <label class="field__label" for="nameInput">姓名</label>
+              <input
+                id="nameInput"
+                class="input"
+                type="text"
+                maxlength="20"
+                placeholder="请输入姓名"
+                autocomplete="off"
+              />
+              <div id="nameError" class="error" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="field">
+              <div class="field__row">
+                <label class="field__label" for="bioInput">个人简介</label>
+                <span id="charCount" class="count" aria-live="polite"></span>
+              </div>
+              <textarea
+                id="bioInput"
+                class="textarea"
+                maxlength="120"
+                rows="4"
+                placeholder="简单介绍自己（最多120字）"
+              ></textarea>
+            </div>
+
+            <div class="form__actions">
+              <button class="btn btn--primary" id="saveBtn" type="button">
+                保存
+              </button>
+              <button class="btn btn--secondary" id="resetBtn" type="button">
+                恢复默认
+              </button>
+            </div>
+
+            <p class="hint">
+              小提示：点击头像可上传图片；点击“保存”会把内容缓存在本地，下次打开仍可保留。
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
